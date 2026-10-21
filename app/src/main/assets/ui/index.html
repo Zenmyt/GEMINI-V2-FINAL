@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Gemini Browser</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-mode="home" data-view="hero">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="spark-grad" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#4285f4"/><stop offset=".55" stop-color="#9b72cb"/><stop offset="1" stop-color="#d96570"/>
+  </linearGradient></defs></svg>
+
+<div id="scrim"></div>
+
+<main id="panel">
+  <header id="top">
+    <button class="icon-btn" id="btn-hist" title="Chats anteriores"></button>
+    <span class="logo" id="logo"></span>
+    <button class="icon-btn hidden" id="btn-new" title="Chat nuevo"></button>
+    <button class="icon-btn" id="btn-theme" title="Claro / oscuro"></button>
+    <button class="icon-btn" id="btn-settings" title="Ajustes"></button>
+    <button class="icon-btn hidden" id="btn-close" title="Cerrar"></button>
+  </header>
+
+  <section id="stage">
+    <div id="hero">
+      <h1 id="h1">¿Por dónde empezamos?</h1>
+    </div>
+    <div id="chat"><div id="msgs"></div></div>
+  </section>
+
+  <footer id="composer">
+    <div id="chips" class="chips"></div>
+    <div id="attach" class="attach hidden"></div>
+    <div id="tag-agent" class="tag hidden"><span>Modo agente</span><button id="tag-agent-x" aria-label="Quitar"></button></div>
+    <div id="tag" class="tag hidden"><span>Usando esta página</span><button id="tag-x" aria-label="Quitar"></button></div>
+    <div id="pill">
+      <button class="icon-btn" id="btn-plus" title="Más"></button>
+      <textarea id="input" rows="1" enterkeyhint="go" placeholder="Pregunta a Gemini o escribe una URL"></textarea>
+      <button id="btn-model" class="model-btn"></button>
+      <button id="btn-main" class="main-btn"></button>
+    </div>
+    <p id="hint">Escribí una dirección para navegar o una pregunta para Gemini. Con “g ” al principio buscás en Google.</p>
+  </footer>
+</main>
+
+<div id="dscrim" class="hidden"></div>
+<aside id="drawer">
+  <div class="dhead"><strong>Chats</strong><button class="icon-btn" id="d-new" title="Chat nuevo"></button></div>
+  <div id="dlist"><div id="dinner"></div></div>
+</aside>
+
+<div id="menu" class="hidden"></div>
+
+<div id="settings" class="hidden">
+  <div class="card">
+    <h2>Ajustes</h2>
+    <label>API key de Gemini
+      <input id="set-key" type="password" autocomplete="off" spellcheck="false" placeholder="Pegá tu API key">
+    </label>
+    <p class="note">Gratis en <a href="https://aistudio.google.com/apikey">aistudio.google.com/apikey</a>. Se guarda solo en este teléfono.</p>
+    <label>Apodo
+      <input id="set-nick" type="text" maxlength="24" autocomplete="off" placeholder="Ej: Facu (vacío = Usuario)">
+    </label>
+    <div class="field"><span>Fuente de la app</span><button id="set-font" class="btn" type="button">Predeterminada</button></div>
+    <label class="check"><input id="set-search" type="checkbox"> Buscar en Google (Gemini consulta la web en tiempo real)</label>
+    <label class="check"><input id="set-confirm" type="checkbox"> Modo agente: pedir confirmación antes de cada acción</label>
+    <label class="check"><input id="set-bounce" type="checkbox"> Animación de rebote suave (estilo iOS)</label>
+    <label>Instrucciones base del Agente
+      <textarea id="set-ins" rows="6" maxlength="4000" spellcheck="false" placeholder="Ej: hablame en español rioplatense, respuestas cortas."></textarea>
+    </label>
+    <p class="note">Se aplican en todos los chats desde el primer mensaje, sin mostrarse en la conversación.</p>
+    <div class="row"><button id="set-cancel" class="btn">Cancelar</button><button id="set-save" class="btn primary">Guardar</button></div>
+  </div>
+</div>
+
+<div id="fonts" class="hidden">
+  <div class="card">
+    <h2>Fuente</h2>
+    <div id="font-list"></div>
+    <p class="note">Se listan las fuentes que Android permite leer. Si no ves la tuya (San Francisco, Isocp…), importá el archivo .ttf u .otf.</p>
+    <div class="row"><button id="font-import" class="btn" type="button">Importar archivo…</button><button id="font-close" class="btn primary" type="button">Listo</button></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+<script src="agent.js"></script>
+</body>
+</html>

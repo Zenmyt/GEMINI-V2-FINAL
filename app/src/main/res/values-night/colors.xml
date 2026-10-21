@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#101012</color>
+    <color name="bar_bg">#101012</color>
+    <color name="pill_bg">#1E1F22</color>
+    <color name="fg">#E3E3E3</color>
+    <color name="hint">#9AA0A6</color>
+</resources>

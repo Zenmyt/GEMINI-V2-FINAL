@@ -1,0 +1,43 @@
+GEMINI BROWSER (Ai bar integrated) - v0.1 (Fase 1)
+====================================================
+
+CÓMO OBTENER EL APK (gratis, sin Android Studio)
+1. Creá una cuenta en github.com (gratis) y tocá "New repository". Nombre: gemini-browser. Privado.
+2. En el repositorio nuevo tocá "uploading an existing file" y arrastrá TODO el contenido de esta carpeta
+   (incluida la carpeta oculta ".github"). Tocá "Commit changes".
+   - Si ".github" no se sube: tocá "Add file > Create new file", escribí en el nombre
+     .github/workflows/build.yml y pegá el contenido del archivo build.yml de esta carpeta.
+3. Entrá a la pestaña "Actions". Se ejecuta solo "Build APK" (tarda 4 a 6 minutos). Si no arranca,
+   elegilo a la izquierda y tocá "Run workflow".
+4. Cuando termine (tilde verde), abrí esa ejecución y bajá "gemini-browser-apk" (es un ZIP con app-debug.apk).
+5. Pasá el APK al teléfono e instalalo (Android te va a pedir permitir instalar de esta fuente).
+6. Si sale una X roja en Actions, copiá el error del paso "Compilar APK" y mandámelo para corregirlo.
+
+PRIMER USO
+- Abrí la app, tocá el engranaje y pegá tu API key de Gemini (aistudio.google.com/apikey).
+- Barra única: escribí una dirección (ej. mercadolibre.com.ar) y navega; escribí una pregunta y le pregunta
+  a Gemini; con "g " delante (ej. "g monitor lg 144hz") busca en Google.
+- Mientras navegás, la barra de abajo hace lo mismo, y el botón ✨ abre el chat sobre la página
+  (Gemini lee el texto de la página y el texto que tengas seleccionado).
+
+ACTUALIZAR: subí los archivos nuevos al mismo repositorio. El APK nuevo se instala encima del anterior.
+
+FASE 1 NO INCLUYE (viene después): varias pestañas, historial y marcadores, menú de selección
+"Explicar/Resumir/Traducir", Auto-Debugger, Modo Agente, descargas, subir archivos desde las webs
+y video a pantalla completa.
+
+NOVEDAD v0.1.2: Ajustes > "Fuente de la app". Lista las fuentes del sistema que Android deja leer
+(Roboto, Samsung, etc.) y permite "Importar archivo…" (.ttf/.otf, máx. 6 MB) para fuentes que no
+estén instaladas, como San Francisco o Isocp. La fuente se aplica al inicio, al chat y a la barra
+de abajo; las páginas web mantienen su propia tipografía.
+
+NOVEDADES v0.2.0 (prueba v2)
+- Arriba a la derecha: sol/luna = cambia entre modo claro y oscuro; engranaje = Ajustes.
+- Arriba a la izquierda: las tres líneas abren el historial de chats (Hoy, Ayer, Últimos 7 días, Anteriores). Se guardan solos.
+- Botón "+": Adjuntar archivos (imágenes, PDF, audio, texto, DOCX), Pegar del portapapeles, Chat nuevo,
+  Buscar en Google, Modo agente y Ajustes.
+- Buscar en Google: Gemini consulta la web en tiempo real y muestra las fuentes (se puede apagar en Ajustes).
+- Modo agente: Gemini mira la pantalla de la página y la maneja (toques, escribir, desplazar, navegar).
+  Barra inferior con "Detener". Pide confirmación en acciones sensibles (o en todas, desde Ajustes).
+- Rebote suave estilo iOS al llegar al borde de las páginas y de las listas. Se apaga en Ajustes.
+- El apodo ya no muestra el cuadradito (se quitan caracteres invisibles).

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#F8F8F8</color>
+    <color name="bar_bg">#F8F8F8</color>
+    <color name="pill_bg">#E9EDF3</color>
+    <color name="fg">#1F1F1F</color>
+    <color name="hint">#5F6368</color>
+    <color name="icon_bg">#101012</color>
+</resources>
